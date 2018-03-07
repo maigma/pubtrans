@@ -23,8 +23,8 @@ class AppStopsModel(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=150, null=False)
     address = models.CharField(max_length=150, null=False)
-    latitude = models.FloatField(max_digits=8, decimal_places=6)
-    longitude = models.FloatField(max_digits=9, decimal_places=6)
+    latitude = models.FloatField() # max_digits=8, decimal_places=6
+    longitude = models.FloatField() # max_digits=9, decimal_places=6
     user_id = models.IntegerField(null=False)
 
     
