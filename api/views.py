@@ -19,10 +19,6 @@ def apina(request):
     template = "api/api-view.html"
     context = {'meno' : 'ahoj'}
 
-    
-
-
-
 #    for p in Person.objects.raw('SELECT * FROM app_users'):
 #        print(p.username)
 

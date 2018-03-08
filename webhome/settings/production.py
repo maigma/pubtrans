@@ -30,7 +30,7 @@ config.read('../important/settings.ini')
 SECRET_KEY = config.get('secrets', 'SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [config.get('debug', 'ALLOWED_HOSTS')]
 
