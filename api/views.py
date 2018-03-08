@@ -56,9 +56,9 @@ class AppStopsList(APIView):
         data = simplejson.load(reader(response))
 
         formated_address = data['results'][0]["formatted_address"]
-        formated_name = data['results'][0]["address_components"][2]["long_name"]
+        formated_name = formated_address.split(' ')
 
-        app_stops.name = formated_name
+        app_stops.name = formated_name[0]
         app_stops.address = formated_address
         app_stops.save()
 
