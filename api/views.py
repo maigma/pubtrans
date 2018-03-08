@@ -11,6 +11,7 @@ from rest_framework.parsers import JSONParser
 
 from urllib.request import urlopen
 import json as simplejson
+import codecs
 
 # Create your views here.
 
@@ -51,7 +52,8 @@ class AppStopsList(APIView):
         
 
         response = urlopen("https://maps.googleapis.com/maps/api/geocode/json?latlng="+str(app_stops.latitude)+","+str(app_stops.longitude)+"&key=AIzaSyA4mDvyVrLGN7IkOJw0ks1QACMVrZ1SQ3I")
-        data = simplejson.load(response)
+        reader = codecs.getreader("utf-8")
+        data = simplejson.load(reader(response))
 
         formated_address = data['results'][0]["formatted_address"]
 
