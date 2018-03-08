@@ -33,10 +33,18 @@ class AppStopsList(APIView):
     @parser_classes((JSONParser,))
     def post(self, request, format=None):
 
+        # print(request.data)
+        # print("id:", request.data["id"])
+        # print("latitude:", request.data["latitude"])
+        # print("longitude:", request.data["longitude"])
 
-        print(request.data)
-        print("id:", request.data["id"])
-        print("latitude:", request.data["latitude"])
-        print("longitude:", request.data["longitude"])
+        app_stops = AppStopsModel()
+        app_stops.name = request.data["name"]
+        app_stops.address = request.data["address"]
+        app_stops.latitude = request.data["latitude"]
+        app_stops.longitude = request.data["longitude"]
+        app_stops.user_id = request.data["user_id"]
+        app_stops.save()
+
 
         return Response({'received data': request.data})
