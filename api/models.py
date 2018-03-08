@@ -28,4 +28,3 @@ class AppStopsModel(models.Model):
     user_id = models.IntegerField(null=False)
 
     
-    
